@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :posts
 
   def full_name
-    last_name.upcase + ", " + first_name.upcase
+    last_name.upcase + ', ' + first_name.upcase
   end
 end

@@ -19,6 +19,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find_by(params[:id])
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
+      redirect_to @post, notice: 'Your post was created successfully'
+    else
+      render :edit
+    end
+  end
+
   def show
   end
 
